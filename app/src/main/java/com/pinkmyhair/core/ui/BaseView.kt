@@ -1,3 +1,3 @@
-package com.cleangithubviewer.core.ui
+package com.pinkmyhair.core.ui
 
 interface BaseView
