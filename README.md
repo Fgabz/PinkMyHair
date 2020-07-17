@@ -14,7 +14,7 @@ The goal of this project is to send profile picture to a server that should retu
 
 I've also added some unit test such as any feature I would have done, but of course it's missing multiple tests
 
-Except the view all layers of the architecture should be able to tested.
+Except the view all layers of the architecture should be able to be tested.
 
 # Architecture
 
@@ -23,7 +23,7 @@ with the MVVM pattern for the presentation layer.
 
 How its works => 
 - The view call the ViewController (take the input of the view) which call the UseCase(handle business logic) which call the Repository (handle the data) which call the different services such as a database/cache or a webservice.
-- All the process starting from the Usecase is done in background when the result is returned in the main thread
+- All the process starting from the Usecase is done in background and the result is returned in the main thread
 
 # Possible improvement
 - More UT
