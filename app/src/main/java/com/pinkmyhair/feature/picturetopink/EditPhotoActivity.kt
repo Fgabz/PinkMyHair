@@ -29,7 +29,6 @@ class EditPhotoActivity : DaggerAppCompatActivity() {
         viewModel = ViewModelProvider(this, viewModelFactory).get(EditPhotoViewController::class.java)
 
         pickerButton.setOnClickListener {
-            progress.visibility = View.VISIBLE
             openPhotoGalleryApplication(REQUEST_CODE_IMAGE_PICKER)
         }
 
@@ -55,6 +54,7 @@ class EditPhotoActivity : DaggerAppCompatActivity() {
         if (resultCode == Activity.RESULT_OK) {
             data?.data?.let {
                 viewModel.onPhotoPicked(contentResolver.openInputStream(it), contentResolver.getType(it))
+                progress.visibility = View.VISIBLE
             }
         }
     }

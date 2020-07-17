@@ -2,5 +2,6 @@
     <string name="app_name">PinkMyHair</string>
     <string name="error_server">Server failed to transform image</string>
     <string name="decoding_error">Erro while decoding</string>
+    <string name="pick_a_picture">Pick a picture</string>
 
 </resources>
