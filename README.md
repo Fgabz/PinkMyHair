@@ -33,4 +33,4 @@ How its works =>
 
 
 
-![Screenshot](device-2020-07-17-192210.png)
+![](device-2020-07-17-192210.png =250x250)
