@@ -5,5 +5,5 @@ import java.io.InputStream
 
 interface UploadAvatarUseCase {
 
-    suspend fun uploadAvatar(imageStream: InputStream, mediaType: String?): Answer<Any>
+    suspend fun uploadAvatar(imageStream: InputStream, mediaType: String?)
 }

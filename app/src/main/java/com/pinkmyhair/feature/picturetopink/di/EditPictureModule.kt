@@ -6,7 +6,9 @@ import com.pinkmyhair.domain.UploadAvatarUseCase
 import com.pinkmyhair.feature.picturetopink.EditPhotoInteractor
 import com.pinkmyhair.feature.picturetopink.EditPhotoPresenter
 import com.pinkmyhair.feature.picturetopink.EditPhotoViewController
+import com.pinkmyhair.feature.picturetopink.EditPhotoViewStateMapper
 import com.pinkmyhair.feature.picturetopink.IEditPhotoPresenter
+import com.pinkmyhair.feature.picturetopink.IEditPhotoViewStateMapper
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -18,6 +20,9 @@ abstract class EditPictureModule {
 
     @Binds
     abstract fun provideInteractor(interactor: EditPhotoInteractor): UploadAvatarUseCase
+
+    @Binds
+    abstract fun provideViewStateMapper(mapper: EditPhotoViewStateMapper): IEditPhotoViewStateMapper
 
     @Binds
     @IntoMap

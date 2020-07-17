@@ -2,16 +2,17 @@ package com.pinkmyhair.feature.picturetopink
 
 import android.app.Activity
 import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.provider.MediaStore
+import android.view.View
+import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import coil.api.load
 import com.pinkmyhair.R
 import com.pinkmyhair.annotation.IDaggerFactoryViewModel
 import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import java.io.ByteArrayOutputStream
 import javax.inject.Inject
 
 class EditPhotoActivity : DaggerAppCompatActivity() {
@@ -28,10 +29,25 @@ class EditPhotoActivity : DaggerAppCompatActivity() {
         viewModel = ViewModelProvider(this, viewModelFactory).get(EditPhotoViewController::class.java)
 
         pickerButton.setOnClickListener {
+            progress.visibility = View.VISIBLE
             openPhotoGalleryApplication(REQUEST_CODE_IMAGE_PICKER)
         }
 
+        setUpObserver()
+
         viewModel.onCreate()
+    }
+
+    private fun setUpObserver() {
+        viewModel.livedataError.observe(this, Observer { message ->
+            progress.visibility = View.GONE
+            Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+        })
+
+        viewModel.livedataTransformedImage.observe(this, Observer { bitmap ->
+            progress.visibility = View.GONE
+            imageContainer.load(bitmap)
+        })
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
