@@ -12,8 +12,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name=".PinkMyAirApplication"
         android:theme="@style/AppTheme">
-        <activity android:name=".feature.EditPhotoActivity">
+        <activity android:name=".feature.picturetopink.EditPhotoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

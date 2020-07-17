@@ -1,4 +1,4 @@
-package com.pinkmyhair.feature
+package com.pinkmyhair.feature.picturetopink
 
 import com.pinkmyhair.annotation.PerActivity
 import com.pinkmyhair.domain.UploadAvatarUseCase

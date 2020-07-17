@@ -41,7 +41,9 @@ dependencies {
     implementation commonDependencies.kotlin
     implementation commonDependencies.kotlinCoroutines
     implementation commonDependencies.androidKTX
+
     implementation uiDependencies.appCompat
+    implementation uiDependencies.recyclerview
     implementation uiDependencies.constraintLayout
     implementation uiDependencies.coil
 

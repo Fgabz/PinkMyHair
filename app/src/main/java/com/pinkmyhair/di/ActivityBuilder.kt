@@ -1,12 +1,8 @@
-package com.pinkmyhair.annotation
+package com.pinkmyhair.di
 
-import com.cleangithubviewer.annotation.PerActivity
-import com.cleangithubviewer.feature.login.LoginActivity
-import com.cleangithubviewer.feature.login.di.LoginModule
-import com.cleangithubviewer.feature.user_repo.GitRepositoryActivity
-import com.cleangithubviewer.feature.user_repo.GitRepositoryModule
-import com.cleangithubviewer.feature.user_repo.listing.di.GitRepositoryListModule
-import com.cleangithubviewer.feature.user_repo.repo_detail.di.RepositoryDetailModule
+import com.pinkmyhair.annotation.PerActivity
+import com.pinkmyhair.feature.picturetopink.EditPhotoActivity
+import com.pinkmyhair.feature.picturetopink.di.EditPictureModule
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -16,18 +12,8 @@ abstract class ActivityBuilder {
     @PerActivity
     @ContributesAndroidInjector(
         modules = [
-            LoginModule::class
+            EditPictureModule::class
         ]
     )
-    abstract fun contributeHomeActivityInjector(): LoginActivity
-
-    @PerActivity
-    @ContributesAndroidInjector(
-        modules = [
-            GitRepositoryModule::class,
-            GitRepositoryListModule.Provider::class,
-            RepositoryDetailModule.Provider::class
-        ]
-    )
-    abstract fun contributeGitRepoActivityInjector(): GitRepositoryActivity
+    abstract fun contributeHomeActivityInjector(): EditPhotoActivity
 }

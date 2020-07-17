@@ -1,8 +1,12 @@
-package com.pinkmyhair.annotation
+package com.pinkmyhair.di
 
 import android.app.Application
 import android.content.Context
 import com.pinkmyhair.PinkMyAirApplication
+import com.pinkmyhair.annotation.DaggerFactoryModule
+import com.pinkmyhair.annotation.PerApp
+import com.pinkmyhair.repository.di.RepositoryModule
+import com.pinkmyhair.service.RemoteModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -13,7 +17,8 @@ import dagger.android.AndroidInjectionModule
         AndroidInjectionModule::class,
         ActivityBuilder::class,
         RemoteModule::class,
-        DaggerFactoryModule::class,]
+        RepositoryModule::class,
+        DaggerFactoryModule::class]
 )
 interface AppComponent {
 

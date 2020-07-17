@@ -1,6 +1,7 @@
 package com.pinkmyhair
 
 import android.app.Application
+import com.pinkmyhair.di.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
