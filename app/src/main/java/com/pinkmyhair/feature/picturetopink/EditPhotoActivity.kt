@@ -75,7 +75,7 @@ class EditPhotoActivity : DaggerAppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK) {
             data?.data?.let {
-                viewModel.onPhotoPicked(contentResolver.openInputStream(it), contentResolver.getType(it))
+                viewModel.onPhotoPicked(contentResolver.openInputStream(it))
                 progress.visibility = View.VISIBLE
             }
         }

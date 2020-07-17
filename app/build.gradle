@@ -66,5 +66,7 @@ dependencies {
     implementation commonDependencies.daggerSupport
 
 
-    testImplementation 'junit:junit:4.12'
+    testImplementation testDependencies.junit
+    testImplementation testDependencies.mockitoKotlin
+
 }

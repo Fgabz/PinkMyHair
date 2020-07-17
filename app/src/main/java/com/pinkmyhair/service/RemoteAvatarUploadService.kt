@@ -17,7 +17,7 @@ import javax.inject.Inject
 
 class RemoteAvatarUploadService @Inject constructor(private val webService: IPictureUploadWebService) : IRemoteAvatarUploadService {
 
-    override suspend fun uploadAvatar(avatar: InputStream, mediaType: String?): Answer<String> {
+    override suspend fun uploadAvatar(avatar: InputStream): Answer<String> {
         lateinit var response: Response<RemotePhotoAnswer>
 
         try {
@@ -39,10 +39,5 @@ class RemoteAvatarUploadService @Inject constructor(private val webService: IPic
         } ?: run {
             return response.throwHttpException()
         }
-    }
-
-    companion object {
-        const val FILE_PARAM_NAME = "b64_img"
-        const val FILENAME_PARAM = "avatar.jpg"
     }
 }

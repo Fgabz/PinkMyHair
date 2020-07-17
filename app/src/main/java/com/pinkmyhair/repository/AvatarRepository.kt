@@ -8,5 +8,5 @@ import javax.inject.Inject
 @PerApp
 class AvatarRepository @Inject constructor(private val service: IRemoteAvatarUploadService) : AvatarDatasource {
 
-    override suspend fun uploadAvatar(avatarFile: InputStream, mediaType: String?) = service.uploadAvatar(avatarFile, mediaType)
+    override suspend fun uploadAvatar(avatarFile: InputStream) = service.uploadAvatar(avatarFile)
 }

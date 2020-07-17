@@ -13,8 +13,8 @@ class EditPhotoInteractor @Inject constructor(
     private val presenter: IEditPhotoPresenter
 ) : UploadAvatarUseCase {
 
-    override suspend fun uploadAvatar(inputStream: InputStream, mediaType: String?) {
-        when (val result = repository.uploadAvatar(inputStream, mediaType)) {
+    override suspend fun uploadAvatar(imageStream: InputStream) {
+        when (val result = repository.uploadAvatar(imageStream)) {
             is Answer.Success -> presenter.displayPicture(result.value)
             is Answer.Failure -> presenter.displayError()
         }

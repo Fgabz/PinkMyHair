@@ -6,6 +6,6 @@ import java.io.InputStream
 interface AvatarDatasource {
 
 
-    suspend fun uploadAvatar(avatarFile: InputStream, mediaType: String?): Answer<String>
+    suspend fun uploadAvatar(avatarFile: InputStream): Answer<String>
 
 }

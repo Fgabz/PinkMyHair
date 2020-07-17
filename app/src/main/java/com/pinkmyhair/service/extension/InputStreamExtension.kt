@@ -2,7 +2,6 @@ package com.pinkmyhair.service.extension
 
 import java.io.ByteArrayInputStream
 import java.io.ByteArrayOutputStream
-import java.io.IOException
 import java.io.InputStream
 
 val InputStream.bytes: ByteArray
@@ -26,27 +25,6 @@ val InputStream.bytes: ByteArray
             }
             bytes = bos.toByteArray()
         }
-
-        return bytes
-    }
-
-val InputStream.toto: ByteArray
-    get()
-    {
-        val bytes: ByteArray
-        val buffer = ByteArray(8192)
-        var bytesRead: Int
-        val output = ByteArrayOutputStream()
-
-        try {
-            while (read(buffer).also { bytesRead = it } != -1) {
-                output.write(buffer, 0, bytesRead)
-            }
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
-
-        bytes = output.toByteArray()
 
         return bytes
     }

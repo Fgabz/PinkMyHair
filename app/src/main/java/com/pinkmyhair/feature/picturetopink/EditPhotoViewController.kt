@@ -35,9 +35,9 @@ class EditPhotoViewController @Inject constructor(
         super.onCleared()
     }
 
-    fun onPhotoPicked(imageUri: InputStream?, mediaType: String?) = viewModelScope.launch(Dispatchers.IO) {
+    fun onPhotoPicked(imageUri: InputStream?) = viewModelScope.launch(Dispatchers.IO) {
         imageUri?.let {
-            uploadAvatarUseCase.uploadAvatar(it, mediaType)
+            uploadAvatarUseCase.uploadAvatar(it)
         }
     }
 

@@ -35,6 +35,13 @@ ext {
     javaxInjectVersion = '1'
     coilVersion = '0.10.1'
 
+
+    //JUnit
+    junitVersion = '4.13'
+
+    //Mockito
+    mockitoKotlinVersion = '2.2.0'
+
     commonDependencies = [
             kotlin                 : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
             kotlinCoroutines       : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutinesVersion",
@@ -67,5 +74,11 @@ ext {
             constraintLayout: "androidx.constraintlayout:constraintlayout:${constraintLayoutVersion}",
             recyclerview    : "androidx.recyclerview:recyclerview:${androidXRecyclerView}",
             coil            : "io.coil-kt:coil:${coilVersion}"
+    ]
+
+    testDependencies = [
+            junit        : "junit:junit:${junitVersion}",
+            kotlinTest   : "org.jetbrains.kotlin:kotlin-test:${kotlinVersion}",
+            mockitoKotlin: "com.nhaarman.mockitokotlin2:mockito-kotlin:${mockitoKotlinVersion}"
     ]
 }
