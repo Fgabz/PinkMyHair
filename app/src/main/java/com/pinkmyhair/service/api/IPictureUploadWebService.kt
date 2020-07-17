@@ -1,12 +1,13 @@
 package com.pinkmyhair.service.api
 
-import okhttp3.MultipartBody
+import com.pinkmyhair.service.entity.RemotePhoto
+import com.pinkmyhair.service.entity.RemotePhotoAnswer
 import retrofit2.Response
+import retrofit2.http.Body
 import retrofit2.http.POST
-import retrofit2.http.Part
 
 interface IPictureUploadWebService {
 
     @POST("/upload")
-    suspend fun uploadAvatar(@Part file: MultipartBody.Part): Response<String>
+    suspend fun uploadAvatar(@Body remotePhoto: RemotePhoto): Response<RemotePhotoAnswer>
 }
