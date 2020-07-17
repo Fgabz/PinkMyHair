@@ -1,4 +1,4 @@
-package com.cleangithubviewer.core.ui
+package com.pinkmyhair.core.ui
 
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.recyclerview.widget.DividerItemDecoration
